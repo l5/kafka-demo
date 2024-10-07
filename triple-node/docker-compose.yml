@@ -69,3 +69,7 @@ services:
       KAFKA_MIN_INSYNC_REPLICAS: 2
     volumes:
       - /opt/kafka3/data:/opt/kafka3/data
+
+networks:
+  default:
+    driver: bridge

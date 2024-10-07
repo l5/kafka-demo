@@ -47,3 +47,26 @@ Example for Windows:
 ```bash
 kafka-topics.bat --list --bootstrap-server localhost:9092
 ```
+
+
+
+## Testing 3-node cluster
+
+create topic with replication factor of 3:
+
+```bash
+podman exec -it kafka1 /bin/bash
+kafka-topics.sh --create --topic replicated-topic --bootstrap-server kafka1:9092 --partitions 3 --replication-factor 3
+```
+
+Create message:
+
+```bash
+kafka-console-producer.sh --topic replicated-topic --bootstrap-server kafka1:9092
+```
+
+Consume message:
+
+```bash
+kafka-console-consumer.sh --topic replicated-topic --from-beginning --bootstrap-server kafka1:9092
+```

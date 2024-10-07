@@ -4,6 +4,12 @@ Demoing a containerized kafka cluster on docker / podman with docker compose
 * Uses the official apache/kafka docker image, version 3.8.0
 * Does not use zookeeper
 
+## Starting the containers
+* Create /opt/kafka1/data and ensure write permissions
+* Create /opt/kafka2/data and ensure write permissions
+* Create /opt/kafka3/data and ensure write permissions
+* `podman compose up` or `docker compose up`
+
 ## Running commands within docker
 
 Log into the container

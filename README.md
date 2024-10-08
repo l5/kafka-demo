@@ -76,3 +76,11 @@ Consume message:
 ```bash
 kafka-console-consumer.sh --topic replicated-topic --from-beginning --bootstrap-server kafka1:9092
 ```
+
+
+## Performance test
+
+```bash
+./kafka-producer-perf-test.sh --topic test-topic --num-records 100000 --record-size 512 --throughput -1 --producer-props bootstrap.servers=localhost:9092
+
+```

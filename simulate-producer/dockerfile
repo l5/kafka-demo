@@ -1,0 +1,5 @@
+# Use the official JMeter image as the base
+FROM justb4/jmeter:5.5
+
+# Install Kafka Plugin for JMeter
+RUN wget https://jmeter-plugins.org/downloads/file/JMeterPlugins-Kafka/1.0.0/jmeter-kafka-1.0.0.jar -P /opt/apache-jmeter-5.5/lib/ext/
